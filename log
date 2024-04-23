@@ -174,3 +174,13 @@ Tue 23 Apr 2024 01:53:15 AM UTC:
  tests:  5|4
 total_score: 30/70
 aa40da6
+Tue 23 Apr 2024 01:53:56 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:50:40: error: expected statement before ‘)’ token
+   50 |   while(map->buckets[posicion] != NULL))
+      |                                        ^
+Compilation failed
+1008770
