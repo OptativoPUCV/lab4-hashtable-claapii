@@ -62,7 +62,6 @@ void enlarge(HashMap * map)
   if (map == NULL) return;
   enlarge_called = 1; //no borrar (testing purposes)
   Pair ** aux = map->buckets;
-  map->capacity *= 2;
   map->buckets = (Pair **)calloc(map->capacity,sizeof(Pair *));
   map->size=0;
   
@@ -70,6 +69,7 @@ void enlarge(HashMap * map)
   {
     insertMap(map, aux[i]->key, aux[i]->value);
   }
+  map->capacity *= 2;
 }
 
 
