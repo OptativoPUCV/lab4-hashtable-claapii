@@ -239,3 +239,17 @@ Tue 23 Apr 2024 02:04:07 AM UTC:
  tests:  11|2
 total_score: 50/70
 4db0ea7
+Tue 23 Apr 2024 02:07:05 AM UTC: 
+ hashmap.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:117:25: error: ‘Pair’ has no member named ‘valor’
+  117 |   return map->buckets[0]->valor;
+      |                         ^~
+hashmap.c:118:1: error: control reaches end of non-void function [-Werror=return-type]
+  118 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+8c7f645

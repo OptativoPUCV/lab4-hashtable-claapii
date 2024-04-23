@@ -60,8 +60,10 @@ void insertMap(HashMap * map, char * key, void * value)
   return;
 }
 
-void enlarge(HashMap * map) {
+void enlarge(HashMap * map) 
+{
     enlarge_called = 1; //no borrar (testing purposes)
+  
 
 
 }
@@ -109,9 +111,10 @@ Pair * searchMap(HashMap *map,  char *key)
   return NULL;
 }
 
-Pair * firstMap(HashMap * map) {
-
-    return NULL;
+Pair * firstMap(HashMap * map) 
+{
+  if(map==NULL) return NULL;
+  return map->buckets[0]->valor;
 }
 
 Pair * nextMap(HashMap * map) {
