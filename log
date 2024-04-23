@@ -522,3 +522,13 @@ Tue 23 Apr 2024 01:44:36 PM UTC:
  1 file changed, 1 insertion(+), 4 deletions(-)
  tests:  0|0
 222a526
+Tue 23 Apr 2024 01:46:45 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:69:53: error: expected statement before ‘)’ token
+   69 |     if(aux[i]->value != NULL && aux[i]->key != NULL))
+      |                                                     ^
+Compilation failed
+a4abd8a
