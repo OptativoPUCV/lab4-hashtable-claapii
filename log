@@ -480,3 +480,14 @@ Tue 23 Apr 2024 01:31:13 PM UTC:
  tests:  16|1
 total_score: 60/70
 19ca006
+Tue 23 Apr 2024 01:35:27 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:143:7: error: ‘i’ undeclared (first use in this function)
+  143 |   for(i = posicion ; i < map->capacity; i++)
+      |       ^
+hashmap.c:143:7: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+16c83a6
