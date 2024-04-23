@@ -69,9 +69,9 @@ void enlarge(HashMap * map)
   
   for(int i = 0 ; i < map->capacity ; i++)
     {
-      if(aux[i] != NULL)
+      if(old_buckets[i] != NULL)
       {
-        insertMap(map,aux[i]->key,aux[i]->value);
+        insertMap(map,old_buckets[i]->key,old_buckets[i]->value);
         map->size++;
       }
     }
@@ -140,12 +140,12 @@ Pair * nextMap(HashMap * map)
   if (map == NULL) return NULL;
   long posicion = map->current + 1;
   
-  for(posicion ; posicion < map->capacity; posicion++)
+  for(i = posicion ; i < map->capacity; i++)
   {
-    if (map->buckets[posicion] != NULL)
+    if (map->buckets[i] != NULL)
     {
-      map->current = posicion;
-      return map->buckets[posicion];
+      map->current = i;
+      return map->buckets[i];
     }
   }
   return NULL;
