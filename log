@@ -115,3 +115,14 @@ Tue 23 Apr 2024 01:41:43 AM UTC:
  tests:  2|5
 total_score: 10/70
 b4f2726
+Tue 23 Apr 2024 01:43:14 AM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:76:17: error: ‘*map->buckets’ is a pointer; did you mean to use ‘->’?
+   76 |     map->buckets->current = posicion+1;
+      |                 ^~
+      |                 ->
+Compilation failed
+c998238
