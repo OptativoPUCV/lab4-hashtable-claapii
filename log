@@ -143,3 +143,17 @@ Tue 23 Apr 2024 01:47:54 AM UTC:
  tests:  2|5
 total_score: 10/70
 bed21a1
+Tue 23 Apr 2024 01:49:27 AM UTC: 
+ hashmap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:82:32: error: expected ‘;’ before ‘}’ token
+   82 |     map->current = posicion + 1
+      |                                ^
+      |                                ;
+   83 | 
+   84 |   }
+      |   ~                             
+Compilation failed
+1eff0e2

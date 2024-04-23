@@ -71,12 +71,16 @@ Pair * searchMap(HashMap *map,  char *key)
 {   
   long posicion = hash(key, map->capacity);
   Pair *par = map->buckets[posicion];
+  map->current = posicion;
   while(par != NULL)
   {
     if(is_equal(par->key, key))
     {
         return par;
     }
+    par = map->buckets[posicion+1];
+    map->current = posicion + 1
+    
   }
   return NULL;
 }
