@@ -137,7 +137,7 @@ Pair * nextMap(HashMap * map)
         map->current = posicion;
         return map->buckets[posicion];
       }
+      posicion++;
   }
-  
-
+  return NULL;
 }
