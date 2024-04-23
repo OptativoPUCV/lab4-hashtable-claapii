@@ -115,7 +115,7 @@ Pair * firstMap(HashMap * map)
 {
   if(map == NULL) return NULL;
   long posicion = 0;
-  while(map->buckets[posicion]->key == NULL)
+  if(map->buckets[posicion]->key == NULL)
   {
     posicion++;
   }
