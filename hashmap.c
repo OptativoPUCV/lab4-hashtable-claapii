@@ -129,7 +129,7 @@ Pair * firstMap(HashMap * map)
 Pair * nextMap(HashMap * map) 
 {
   if (map == NULL) return NULL;
-  long posicion = map->current + 1;
-  return map->buckets[posicion];
+  long posicion = map->current;
+  return map->buckets[posicion+1];
 
 }
