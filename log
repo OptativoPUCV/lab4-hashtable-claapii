@@ -452,3 +452,25 @@ Tue 23 Apr 2024 01:30:19 PM UTC:
  tests:  16|1
 total_score: 60/70
 3b72fe9
+Tue 23 Apr 2024 01:30:40 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:66:23: error: initialization of ‘Pair *’ from incompatible pointer type ‘Pair **’ [-Werror=incompatible-pointer-types]
+   66 |   Pair *old_buckets = map->buckets;
+      |                       ^~~
+hashmap.c:72:25: error: invalid operands to binary != (have ‘Pair’ and ‘void *’)
+   72 |       if(old_buckets[i] != NULL)
+      |          ~~~~~~~~~~~~~~ ^~
+      |                     |
+      |                     Pair
+hashmap.c:74:37: error: invalid type argument of ‘->’ (have ‘Pair’)
+   74 |         insertMap(map,old_buckets[i]->key,old_buckets[i]->value);
+      |                                     ^~
+hashmap.c:74:57: error: invalid type argument of ‘->’ (have ‘Pair’)
+   74 |         insertMap(map,old_buckets[i]->key,old_buckets[i]->value);
+      |                                                         ^~
+cc1: all warnings being treated as errors
+Compilation failed
+37be734
