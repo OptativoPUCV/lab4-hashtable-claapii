@@ -72,9 +72,8 @@ Pair * searchMap(HashMap * map,  char * key) {
   Pair *par = map->buckets[posicion];
   while(par != NULL && par->key != NULL && is_equal(par->key, key) == 0)
   {
-    par = map->buckets[posicion];
-    map->current = posicion;
-    posicion++;
+    par = map->buckets[posicion+1];
+    map->current = posicion+1;
   }
   return par;
 }
