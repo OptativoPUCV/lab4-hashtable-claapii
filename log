@@ -405,3 +405,14 @@ Tue 23 Apr 2024 02:45:38 AM UTC:
  tests:  16|1
 total_score: 60/70
 8f0ee8f
+Tue 23 Apr 2024 01:22:36 PM UTC: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:130:3: error: statement with no effect [-Werror=unused-value]
+  130 |   for (posicion ; posicion < map->capacity; posicion++)
+      |   ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+06e4708
