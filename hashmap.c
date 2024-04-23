@@ -129,13 +129,14 @@ Pair * nextMap(HashMap * map)
 {
   if (map == NULL) return NULL;
   long posicion = map->current + 1;
-  for (long i = posicion ; i <= map->capacity; i++)
+  while (posicion < map->capacity)
   {
-      if (map->buckets[posicion] != NULL)
-      {
-        map->current = posicion;
-        return map->buckets[posicion];
-      }
+    if (map->buckets[posicion] != NULL)
+    {
+      map->current = posicion;
+      return map->buckets[posicion];
+    }
+    posicion++;
   }
   return NULL;
 }
