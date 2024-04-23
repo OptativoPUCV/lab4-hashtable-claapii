@@ -157,3 +157,14 @@ hashmap.c:82:32: error: expected ‘;’ before ‘}’ token
       |   ~                             
 Compilation failed
 1eff0e2
+Tue 23 Apr 2024 01:53:03 AM UTC: 
+ hashmap.c | 26 +++++++++++++++++++-------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:98:1: error: control reaches end of non-void function [-Werror=return-type]
+   98 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+6f1ed16
