@@ -62,14 +62,21 @@ void enlarge(HashMap * map)
   if (map == NULL) return;
   enlarge_called = 1; //no borrar (testing purposes)
   Pair ** aux = map->buckets;
+  long oldC = map->capacity;
+  map->capacity *= 2;
   map->buckets = (Pair **)calloc(map->capacity,sizeof(Pair *));
   map->size=0;
   
-  for(int i = 0; i < map->capacity; i++)
+  for(int i = 0; i < oldC; i++)
   {
-    insertMap(map, aux[i]->key, aux[i]->value);
+    if(aux[i] != NULL)
+    {
+      insertMap(map,aux[i]->key,aux[i]->value);
+      map->size++;
+    }
+    
   }
-  map->capacity *= 2;
+  
 }
 
 
