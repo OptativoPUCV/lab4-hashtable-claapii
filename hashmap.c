@@ -59,24 +59,23 @@ void insertMap(HashMap * map, char * key, void * value)
 
 void enlarge(HashMap * map) 
 {
-  if (map == NULL) return;
   enlarge_called = 1; //no borrar (testing purposes)
-  Pair ** aux = map->buckets;
-  long oldC = map->capacity;
+  if (map == NULL) return;
+  
+  Pair ** aux = map->buckets; 
+  long oldC = map->capacity; //Usamos su capacidad anterior
   map->capacity *= 2;
   map->buckets = (Pair **)calloc(map->capacity,sizeof(Pair *));
   map->size=0;
   
-  for(int i = 0; i < oldC; i++)
+  for(int i = 0; i < oldC; i++) //oldC para reasignar sus posiciones originales
   {
     if(aux[i] != NULL)
     {
       insertMap(map,aux[i]->key,aux[i]->value);
       map->size++;
-    }
-    
-  }
-  
+    } 
+  }  
 }
 
 
@@ -99,9 +98,9 @@ void eraseMap(HashMap * map,  char * key)
       if(is_equal(map->buckets[posicion]->key, key))
       {
         map->buckets[posicion]->key = NULL;
-        map->size--;
+        map->size--; //Disminuir elementos dentro del map
       }
-      posicion = (posicion+1) % map->capacity;
+      posicion = (posicion+1) % map->capacity; //Pasar a la siguiente posición
     }
   return;
 }
