@@ -74,7 +74,7 @@ Pair * searchMap(HashMap * map,  char * key) {
   {
     par = map->buckets[posicion];
     map->current = posicion;
-    posicion+=1;
+    posicion++;
   }
   return par;
 }
